@@ -103,7 +103,7 @@ static const char* TypeToString_syslog(const Type_syslog type)
         else{\
             FILE *fp = NULL;\
             char msg[256] = {0};\
-            if(log_size*1024 > Get_file_size(LOG_FILE)){fp = fopen(LOG_FILE,"a+");}\
+            if(log_size*1024*1024 > Get_file_size(LOG_FILE)){fp = fopen(LOG_FILE,"a+");}\
             else{\
                 fp = fopen(LOG_FILE,"w");\
             }\
